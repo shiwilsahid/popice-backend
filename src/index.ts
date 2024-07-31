@@ -8,7 +8,7 @@ app.use("/*", cors());
 
 app.get("/", (c) => {
   return c.json({
-    message: "Pop Ice Backend API",
+    message: "Pop Ice API",
     products: "/api/products",
   });
 });
