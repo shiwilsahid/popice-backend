@@ -1,4 +1,4 @@
-# Pop Ice Backend
+# POP ICE BACKEND
 
 ## REST API Specification
 
