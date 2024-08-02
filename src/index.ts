@@ -52,13 +52,13 @@ app.get("/api/categories", async (c) => {
   return c.json(categories);
 });
 
-// Get Category by slug
+// Get All Product by Slug Category
 app.get("/api/categories/:slug", async (c) => {
   const slugCategory = c.req.param("slug");
 
   const category = await prisma.category.findUnique({
     where: { slug: slugCategory },
-    include: { products: true }
+    include: { products: true },
   });
 
   if (!category) {
@@ -69,6 +69,5 @@ app.get("/api/categories/:slug", async (c) => {
   const categoryProducts = category.products;
   return c.json(categoryProducts);
 });
-
 
 export default app;

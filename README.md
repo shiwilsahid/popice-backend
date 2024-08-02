@@ -14,10 +14,10 @@
 
 ### Category API:
 
-| HTPP                    | Endpoint | Description          |
-| ----------------------- | -------- | -------------------- |
-| `/api/categories`       | `GET`    | Get Categories       |
-| `/api/categories/:slug` | `GET`    | Get Category by Slug |
+| HTPP                    | Endpoint | Description                      |
+| ----------------------- | -------- | -------------------------------- |
+| `/api/categories`       | `GET`    | Get Categories                   |
+| `/api/categories/:slug` | `GET`    | Get All Product by Slug Category |
 
 ## Getting Started
 
