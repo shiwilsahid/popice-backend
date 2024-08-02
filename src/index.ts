@@ -28,10 +28,10 @@ app.get("/api/products", async (c) => {
 
 // Get Product by slug
 app.get("/api/products/:slug", async (c) => {
-  const slug = c.req.param("slug");
+  const slugProduct = c.req.param("slug");
 
   const product = await prisma.product.findUnique({
-    where: { slug },
+    where: { slug: slugProduct },
     include: {
       category: true,
     },
@@ -54,10 +54,11 @@ app.get("/api/categories", async (c) => {
 
 // Get Category by slug
 app.get("/api/categories/:slug", async (c) => {
-  const slug = c.req.param("slug");
+  const slugCategory = c.req.param("slug");
 
   const category = await prisma.category.findUnique({
-    where: { slug },
+    where: { slug: slugCategory },
+    include: { products: true }
   });
 
   if (!category) {
@@ -65,7 +66,9 @@ app.get("/api/categories/:slug", async (c) => {
     return c.json({ message: "Category not found" });
   }
 
-  return c.json(category);
+  const categoryProducts = category.products;
+  return c.json(categoryProducts);
 });
+
 
 export default app;
