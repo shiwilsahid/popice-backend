@@ -12,6 +12,13 @@
 | `/api/products`       | `GET`    | Get Products        |
 | `/api/products/:slug` | `GET`    | Get Product by Slug |
 
+### Category API:
+
+| HTPP                    | Endpoint | Description          |
+| ----------------------- | -------- | -------------------- |
+| `/api/categories`       | `GET`    | Get Categories       |
+| `/api/categories/:slug` | `GET`    | Get Category by Slug |
+
 ## Getting Started
 
 To install dependencies:
